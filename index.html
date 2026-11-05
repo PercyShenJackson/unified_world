@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>武 · UNIFIED WORLD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">武 <span>UNIFIED WORLD</span></div>
+
+    <nav>
+        <button onclick="showPage('home')">Home</button>
+        <button onclick="showPage('project')">Project</button>
+        <button onclick="showPage('game')">Games</button>
+        <button onclick="showPage('physics')">Physics</button>
+        <button onclick="showPage('wushu')">Wushu</button>
+    </nav>
+</header>
+
+<main>
+
+<section id="home" class="page active">
+    <div class="hero">
+        <p class="eyebrow">ONE PLATFORM · FOUR WORLDS</p>
+        <h1>武 · UNIFIED WORLD</h1>
+        <p>LEARN · PLAY · DISCOVER · TRAIN</p>
+        <button class="primary"
+                onclick="showPage('project')">
+            ENTER YOUR WORLD
+        </button>
+    </div>
+
+    <div class="stats">
+        <div class="card">
+            <h2 id="points">0</h2>
+            <p>Total Points</p>
+        </div>
+        <div class="card">
+            <h2 id="completed">0</h2>
+            <p>Activities Completed</p>
+        </div>
+        <div class="card">
+            <h2>4</h2>
+            <p>Integrated Worlds</p>
+        </div>
+    </div>
+
+    <div class="modules">
+        <div class="module" onclick="showPage('project')">
+            <span>01</span>
+            <h2>PROJECT HUB</h2>
+            <p>Learning, organization and progress.</p>
+        </div>
+
+        <div class="module" onclick="showPage('game')">
+            <span>02</span>
+            <h2>GAME CENTER</h2>
+            <p>Play, compete and earn points.</p>
+        </div>
+
+        <div class="module" onclick="showPage('physics')">
+            <span>03</span>
+            <h2>PHYSICS LAB</h2>
+            <p>Explore scientific experiments.</p>
+        </div>
+
+        <div class="module" onclick="showPage('wushu')">
+            <span>04</span>
+            <h2>WUSHU ACADEMY</h2>
+            <p>Discover Chinese martial arts.</p>
+        </div>
+    </div>
+</section>
+
+<section id="project" class="page">
+    <h1>PROJECT HUB</h1>
+    <p>Your central learning and productivity space.</p>
+
+    <div class="card">
+        <h2>Daily Mission</h2>
+        <p>Complete an activity in one of the four worlds.</p>
+        <button onclick="completeActivity(10)">
+            Complete Mission +10
+        </button>
+    </div>
+
+    <div class="card">
+        <h2>Progress</h2>
+        <div class="progress-bar">
+            <div id="progress"></div>
+        </div>
+        <p id="progressText">0% completed</p>
+    </div>
+</section>
+
+<section id="game" class="page">
+    <h1>GAME CENTER</h1>
+    <p>Test your knowledge and earn rewards.</p>
+
+    <div class="card">
+        <h2>Quick Mathematics Challenge</h2>
+        <p id="question">What is 12 × 8?</p>
+
+        <input id="answer"
+               type="number"
+               placeholder="Your answer">
+
+        <button onclick="checkAnswer()">Submit Answer</button>
+        <p id="gameResult"></p>
+    </div>
+
+    <div class="card">
+        <h2>Your Score</h2>
+        <h2 id="gameScore">0</h2>
+    </div>
+</section>
+
+<section id="physics" class="page">
+    <h1>PHYSICS LABORATORY</h1>
+    <p>Explore motion and fundamental physics.</p>
+
+    <div class="card">
+        <h2>Motion Calculator</h2>
+
+        <label>Initial velocity (m/s)</label>
+        <input id="velocity" type="number" value="0">
+
+        <label>Acceleration (m/s²)</label>
+        <input id="acceleration" type="number" value="9.8">
+
+        <label>Time (seconds)</label>
+        <input id="time" type="number" value="5">
+
+        <button onclick="calculatePhysics()">
+            Calculate Motion
+        </button>
+
+        <div id="physicsResult"></div>
+    </div>
+</section>
+
+<section id="wushu" class="page">
+    <h1>WUSHU ACADEMY</h1>
+    <p>Learn discipline, movement and martial arts.</p>
+
+    <div class="modules">
+        <div class="card">
+            <h2>01 · Basic Stances</h2>
+            <p>Learn the horse stance and bow stance.</p>
+            <button onclick="lesson('Basic Stances')">
+                Start Lesson
+            </button>
+        </div>
+
+        <div class="card">
+            <h2>02 · Fundamental Techniques</h2>
+            <p>Study basic hand techniques and coordination.</p>
+            <button onclick="lesson('Fundamental Techniques')">
+                Start Lesson
+            </button>
+        </div>
+
+        <div class="card">
+            <h2>03 · Forms</h2>
+            <p>Explore traditional Wushu forms.</p>
+            <button onclick="lesson('Forms')">
+                Start Lesson
+            </button>
+        </div>
+
+        <div class="card">
+            <h2>04 · Philosophy</h2>
+            <p>Discover the values of discipline and respect.</p>
+            <button onclick="lesson('Philosophy')">
+                Start Lesson
+            </button>
+        </div>
+    </div>
+
+    <p id="lessonResult"></p>
+</section>
+
+</main>
+
+<footer>
+    <p>武 · UNIFIED WORLD © 2026</p>
+    <p>LEARN · PLAY · DISCOVER · TRAIN</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
